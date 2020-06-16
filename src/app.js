@@ -7,8 +7,10 @@ import configureStore from './store/configureStrore';
 import { addExpense } from './actions/expenses'
 import { setTextFilter } from './actions/filters'
 import getVisibleExpenses from './selectors/expenses'
+import './styles/styles.scss';
 
-// WEiter 9:14:47
+
+// WEiter 1:31:05
 
 import './styles/styles.scss';
 
