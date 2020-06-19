@@ -68,54 +68,95 @@ export default class ExpenseForm extends React.Component {
   };   
 
   render(){
-    return (
-      <div>
-       {this.state.error&& <p>{this.state.error}</p>}
 
-        <h1>Expense Form-Seites</h1>
-        <form onSubmit ={this.onSubmit}>
-          <input
-          
+    return (
+        <form className="form" onSubmit={this.onSubmit}>
+        {this.state.error&& <p>{this.state.error}</p>}
+
+          <input          
              type="text"
              placeholder="Description"
              autoFocus
+             className="text-input"
              value={this.state.description}
              onChange={this.onDesctiptionChange}
           />
 
-          <input
-          
+          <input          
           type="text"
           placeholder="Amount"
+          className="text-input"
           value={this.state.amount}
-          onChange={this.onAnmountChange}
-          
+          onChange={this.onAnmountChange}          
           /> 
-
-          {/* <SingleDatePicker
-           date={this.state.createdAt}
-             onDateChange={this.onDateChange}
-             focused={this.state.calendarFocused}
-             onFocusChange={this.onFocusChange}
-            numberOfMonths={1}
-             isOutsideRange={() => false}
-             /> */}
-
 
           <textarea
           placeholder=" Notiz für Note"
+          className="textarea"
           value={this.state.note}
           onChange={this.onNoteChange}
           >
 
           </textarea>
-
-          <button> Hinzufügen Expense</button>
-
-
+          <div>
+          <button className="button"> Hinzufügen Expense</button>
+          </div>
+         
         </form>
 
-      </div>
+      
+    // return (
+    //   <div>
+
+    //     <h1>Expense Form-Seites</h1>
+    //     <form onSubmit ={this.onSubmit}>
+    //         {this.state.error&& <p>{this.state.error}</p>}
+
+    //       <input
+          
+    //          type="text"
+    //          placeholder="Description"
+    //          autoFocus
+    //          className="text-input"
+    //          value={this.state.description}
+    //          onChange={this.onDesctiptionChange}
+    //       />
+
+    //       <input
+          
+    //       type="text"
+    //       placeholder="Amount"
+    //       className="text-input"
+    //       value={this.state.amount}
+    //       onChange={this.onAnmountChange}
+          
+    //       /> 
+
+    //       {/* <SingleDatePicker
+    //        date={this.state.createdAt}
+    //          onDateChange={this.onDateChange}
+    //          focused={this.state.calendarFocused}
+    //          onFocusChange={this.onFocusChange}
+    //         numberOfMonths={1}
+    //          isOutsideRange={() => false}
+    //          /> */}
+
+
+    //       <textarea
+    //       placeholder=" Notiz für Note"
+    //       className="textarea"
+    //       value={this.state.note}
+    //       onChange={this.onNoteChange}
+    //       >
+
+    //       </textarea>
+
+    //       <button> Hinzufügen Expense</button>
+
+
+    //     </form>
+
+    //   </div>
       
 
 

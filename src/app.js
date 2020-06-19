@@ -11,6 +11,7 @@ import { login, logout } from './actions/auth'
 import getVisibleExpenses from './selectors/expenses'
 import './styles/styles.scss';
 import {firebase} from './firebase/firebase' 
+import LoadingPage from './components/LoadingPage'
 
 
 // WEiter 5:41:25
@@ -43,17 +44,17 @@ const jsx =(
     
 )
 
-let hasRendered = false;
+let hasRendered = false; 
 const renderApp = () => {
   if (!hasRendered) {
     ReactDOM.render(jsx, document.getElementById('app'));
     hasRendered = true;
   }
 };
+// ReactDOM.render(jsx, document.getElementById('app'));
 
-// ReactDOM.render(<LoadingPage />, document.getElementById('app'));
-ReactDOM.render(jsx, document.getElementById('app'));
-
+ReactDOM.render(<LoadingPage />, document.getElementById('app'));
+// 
 
 // store.dispatch(startSetExpenses()).then(()=> {  
 //     ReactDOM.render(jsx, document.getElementById('app'))

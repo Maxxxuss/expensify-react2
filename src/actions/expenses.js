@@ -10,7 +10,7 @@ export const addExpense = (expense) => ({
 
 export const startAddExpense = (expenseData = {}) => {
   // return (dispatch) => {
-    return (dispatch) => {
+    return (dispatch, getState) => {
 
     const uid = getState().auth.uid;    //UID für firebase login
     const {
@@ -45,6 +45,8 @@ export const removeExpense = ({ id } = {}) => ({
 
 export const startRemoveExpense = ({ id } = {}) => {
   // return (dispatch) => {
+    return (dispatch, getState) => {
+
     const uid = getState().auth.uid;
       return database.ref(`users/${uid}/expenses/${id}`).remove().then(() => {
 
@@ -52,7 +54,7 @@ export const startRemoveExpense = ({ id } = {}) => {
       dispatch(removeExpense({ id }));
     });
   };
-// };
+};
 
 // EDIT_EXPENSE
 export const editExpense = (id, updates) => ({
@@ -63,6 +65,8 @@ export const editExpense = (id, updates) => ({
 
 export const startEditExpense = (id, updates) => {
   // return (dispatch) => {
+    return (dispatch, getState) => {
+
     const uid = getState().auth.uid;
     return database.ref(`users/${uid}/expenses/${id}`).update(updates).then(() => {
 
@@ -70,7 +74,7 @@ export const startEditExpense = (id, updates) => {
       dispatch(editExpense(id, updates));
     });
   };
-// };
+};
 
 // SET_EXPENSES
 export const setExpenses = (expenses) => ({
